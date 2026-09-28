@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FlowPilot Triage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--APP-->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <div class="brand-name">FlowPilot Triage</div>
+        <div class="brand-sub">Customer feedback → product priorities</div>
+      </div>
+    </div>
+    <label class="reviewer-field" for="reviewer-name">
+      <span>Reviewer</span>
+      <input id="reviewer-name" type="text" placeholder="Your name" autocomplete="name">
+    </label>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-priorities" aria-controls="panel-priorities" aria-selected="true" data-tab="priorities">Priorities</button>
+    <button role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" data-tab="evidence">Evidence</button>
+    <button role="tab" id="tab-checks" aria-controls="panel-checks" aria-selected="false" data-tab="checks">Checks <span class="tab-count" id="checks-count"></span></button>
+    <button role="tab" id="tab-history" aria-controls="panel-history" aria-selected="false" data-tab="history">Review history <span class="tab-count" id="history-count"></span></button>
+    <button role="tab" id="tab-method" aria-controls="panel-method" aria-selected="false" data-tab="method">Method</button>
+  </nav>
+</header>
+
+<main class="page">
+  <!-- PRIORITIES -->
+  <section id="panel-priorities" role="tabpanel" aria-labelledby="tab-priorities" class="panel">
+    <div class="layout">
+      <aside class="inputs" aria-label="Inputs">
+        <div class="input-group">
+          <h2 class="eyebrow">Data</h2>
+          <label class="field" for="dataset-select"><span>Dataset</span>
+            <select id="dataset-select"></select>
+          </label>
+          <label class="upload" for="csv-upload">
+            <input id="csv-upload" type="file" accept=".csv,text/csv">
+            <span>Upload a CSV</span>
+          </label>
+          <p class="hint" id="dataset-hint"></p>
+        </div>
+
+        <div class="input-group">
+          <h2 class="eyebrow">Filters</h2>
+          <label class="field" for="f-segment"><span>Segment</span><select id="f-segment"></select></label>
+          <label class="field" for="f-plan"><span>Plan</span><select id="f-plan"></select></label>
+          <label class="field" for="f-source"><span>Source</span><select id="f-source"></select></label>
+          <div class="field-row">
+            <label class="field" for="f-from"><span>From</span><input id="f-from" type="date"></label>
+            <label class="field" for="f-to"><span>To</span><input id="f-to" type="date"></label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="group-head">
+            <h2 class="eyebrow">Score weights</h2>
+            <button class="link-btn" id="reset-weights" type="button">Reset</button>
+          </div>
+          <div id="weights"></div>
+          <p class="hint">Weights are rescaled to 100. Signals missing from the dataset are left out.</p>
+        </div>
+      </aside>
+
+      <div class="results">
+        <div class="summary" id="summary"></div>
+
+        <div class="viz-card" id="rank-compare-card">
+          <div class="viz-head">
+            <div>
+              <h2 class="section-title">Frequency vs. impact</h2>
+              <p class="section-sub">Left: ranked by how often an issue is mentioned. Right: ranked by impact score. Lines that cross are where counting comments would mislead.</p>
+            </div>
+          </div>
+          <div class="slope-wrap" id="slope"></div>
+        </div>
+
+        <div class="list-head">
+          <div>
+            <h2 class="section-title">Ranked issues</h2>
+            <p class="section-sub">Each card shows the system analysis first and the human decision below it.</p>
+          </div>
+          <div class="list-controls">
+            <label class="field inline" for="sort-mode"><span>Sort</span>
+              <select id="sort-mode">
+                <option value="score">System score</option>
+                <option value="decision">Reviewed priority</option>
+                <option value="frequency">Frequency</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="legend" id="score-legend" aria-label="Score components"></div>
+        <ol class="issues" id="issues"></ol>
+
+        <section class="praise" id="praise"></section>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" class="panel" hidden>
+    <div class="panel-head">
+      <div>
+        <h2 class="section-title">Evidence</h2>
+        <p class="section-sub">Every feedback item and the issue it was assigned to. Move an item to another issue to correct the system; the correction is saved and reused on future runs.</p>
+      </div>
+      <div class="evidence-controls">
+        <label class="field inline" for="ev-issue"><span>Issue</span><select id="ev-issue"></select></label>
+        <label class="field inline" for="ev-search"><span>Search</span><input id="ev-search" type="search" placeholder="Text, ID or account"></label>
+      </div>
+    </div>
+    <div class="table-wrap"><table class="data-table" id="evidence-table"></table></div>
+  </section>
+
+  <!-- CHECKS -->
+  <section id="panel-checks" role="tabpanel" aria-labelledby="tab-checks" class="panel" hidden>
+    <div class="panel-head">
+      <div>
+        <h2 class="section-title">Evaluation checks</h2>
+        <p class="section-sub">Output checks test whether the ranking holds up. Input checks test whether the data can be trusted. Review checks track human oversight.</p>
+      </div>
+    </div>
+    <div id="checks"></div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="panel-history" role="tabpanel" aria-labelledby="tab-history" class="panel" hidden>
+    <div class="panel-head">
+      <div>
+        <h2 class="section-title">Review history</h2>
+        <p class="section-sub">What the system recommended, what a reviewer changed, and why. Records are append-only; the latest decision per issue is carried forward.</p>
+      </div>
+      <div class="history-actions">
+        <button class="btn" type="button" id="export-csv">Copy as CSV</button>
+        <button class="btn" type="button" id="export-json">Copy as JSON</button>
+        <label class="btn" for="import-json">Import JSON<input id="import-json" type="file" accept=".json,application/json" hidden></label>
+        <button class="btn danger" type="button" id="clear-history">Clear all</button>
+      </div>
+    </div>
+    <div class="confirm-bar" id="clear-confirm" hidden>
+      <span>Delete every review and correction stored in this browser? This cannot be undone.</span>
+      <button class="btn danger" type="button" id="clear-yes">Delete all</button>
+      <button class="btn" type="button" id="clear-no">Keep</button>
+    </div>
+    <div class="table-wrap"><table class="data-table" id="history-table"></table></div>
+
+    <h3 class="subsection-title">Item corrections</h3>
+    <div class="table-wrap"><table class="data-table" id="corrections-table"></table></div>
+
+    <h3 class="subsection-title">Reusable reviewer context</h3>
+    <p class="section-sub">These decisions are already applied to every new analysis in this app. Copy the block into a Custom GPT, Claude or Cursor prompt so an LLM-based analysis learns from the same corrections.</p>
+    <div class="context-box">
+      <button class="btn" type="button" id="copy-context">Copy</button>
+      <pre id="context-text" tabindex="0"></pre>
+    </div>
+    <textarea id="copy-fallback" class="sr-only" aria-hidden="true" tabindex="-1"></textarea>
+  </section>
+
+  <!-- METHOD -->
+  <section id="panel-method" role="tabpanel" aria-labelledby="tab-method" class="panel method" hidden>
+    <div class="method-grid">
+      <article>
+        <h2 class="section-title">How the score works</h2>
+        <p>Each complaint theme gets six component scores between 0 and 1. The impact score is the weighted sum, scaled to 100:</p>
+        <dl class="defs" id="method-components"></dl>
+        <p>Revenue uses the square root of contract value so one large account does not swamp everything else. Breadth counts distinct accounts, not comments, so a customer who writes in twice is counted once.</p>
+        <h3>Priority tiers</h3>
+        <ul class="tiers" id="method-tiers"></ul>
+        <h3>What counts as a complaint</h3>
+        <p>An item is treated as praise when its rating is 4 or 5 and the text makes no request ("need", "want", "would", "please", "cannot" and similar). Praise is kept out of the ranking and shown as strengths to protect. Items are grouped by the dataset's <code>product_area</code>; when that column is missing, a keyword classifier reads the text.</p>
+      </article>
+      <article>
+        <h2 class="section-title">The prompt this app implements</h2>
+        <blockquote>
+          You are helping a product manager decide which customer problems to investigate and address first.
+          The goal is not merely to summarize the comments. The goal is to make product priorities clearer.
+          Use the customer comment, rating, customer segment, product area, and cancellation status when available.
+          Do not assume that frequency alone determines importance. Consider severity, affected segment, and possible business impact.
+        </blockquote>
+        <h3>From prompt to app</h3>
+        <ol class="steps">
+          <li><strong>Basic prompt.</strong> "Summarize and rank the most common customer complaints." Ranks by frequency, so free-plan dashboard requests win.</li>
+          <li><strong>Better prompt.</strong> Adds the PM's goal and the rule that frequency is not importance.</li>
+          <li><strong>Custom GPT.</strong> The same instructions saved as a reusable assistant. See <code>docs/custom-gpt-instructions.md</code>.</li>
+          <li><strong>Web app.</strong> Inputs, prioritized outputs, evidence, evaluation checks and feedback controls exposed as a tool. See <code>docs/app-spec.md</code>.</li>
+          <li><strong>Human review.</strong> Approve, re-prioritize, rename or re-categorize, with notes, a history and corrections reused on the next run.</li>
+        </ol>
+        <p class="hint">This version scores with transparent rules so every number can be traced to rows. The reviewer context on the Review history tab is the bridge to an LLM-based version.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="data/sample-data.js"></script>
+<script src="js/csv.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/reviews.js"></script>
+<script src="js/app.js"></script>
+<!--/APP-->
+</body>
+</html>

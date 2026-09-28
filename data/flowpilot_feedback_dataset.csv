@@ -1,0 +1,91 @@
+feedback_id,account_id,date,feedback_text,source,customer_segment,plan,annual_contract_value,tenure_months,product_area,rating,usage_level,canceled,churn_risk,support_escalation,release_version,resolution_status,action_taken,outcome_after_action
+F001,STF-01,2026-06-05,I wish I could change the colors and layout of every dashboard.,survey,Startup,Free,0,1,Dashboards,3,Low,No,Low,No,3.6,Open,Added to backlog,
+F002,STF-02,2026-06-02,The dashboard feels too rigid. I want to move the cards around.,support_ticket,Startup,Free,0,2,Dashboards,4,Low,No,Low,No,3.6,Open,,
+F003,STF-03,2026-06-13,Can we get more themes and color options?,support_ticket,Startup,Free,0,1,Dashboards,3,Medium,No,Low,No,3.6,Closed - no action,Added to backlog,No measurable change
+F004,STF-04,2026-07-15,I would like more control over fonts and spacing in reports.,survey,Startup,Free,0,7,Dashboards,3,Medium,No,Low,No,3.6,Open,,
+F005,STF-05,2026-07-10,There are not enough dashboard templates for my use case.,app_review,Startup,Free,0,2,Dashboards,3,Medium,No,Low,No,3.7,Open,Added to backlog,No measurable change
+F006,STF-06,2026-06-11,I want to hide widgets I do not use.,survey,Startup,Free,0,7,Dashboards,2,Medium,No,Low,No,3.7,Monitoring,,
+F007,STF-07,2026-07-13,"The default dashboard is fine, but I want a more polished look.",support_ticket,Startup,Free,0,4,Dashboards,3,Low,No,Low,No,3.6,Open,,No measurable change
+F008,STF-08,2026-06-16,Please let me create custom dashboard layouts.,support_ticket,Startup,Free,0,6,Dashboards,3,Medium,No,Low,No,3.7,Open,Added to backlog,No measurable change
+F009,STF-09,2026-06-01,I would like to rearrange the charts without upgrading.,support_ticket,Startup,Free,0,2,Dashboards,3,Low,No,Low,No,3.6,Closed - no action,,No measurable change
+F010,STF-10,2026-06-05,More color palettes would make client screenshots look better.,support_ticket,Startup,Free,0,4,Dashboards,3,Low,No,Low,No,3.6,Open,,No measurable change
+F011,STF-11,2026-06-28,The dashboard needs a dark mode.,survey,Startup,Free,0,4,Dashboards,3,Low,No,Low,No,3.7,Closed - no action,Added to backlog,No measurable change
+F012,STF-12,2026-07-06,I want to customize the home screen for each project.,app_review,Startup,Free,0,3,Dashboards,3,Medium,No,Low,No,3.7,Monitoring,,No measurable change
+F013,STF-01,2026-07-01,I wish I could change the colors and layout of every dashboard.,survey,Startup,Free,0,8,Dashboards,2,Low,No,Low,No,3.6,Open,Added to backlog,
+F014,STF-02,2026-05-26,The dashboard feels too rigid. I want to move the cards around.,support_ticket,Startup,Free,0,7,Dashboards,2,Medium,No,Low,No,3.7,Monitoring,,No measurable change
+F015,STF-03,2026-06-10,Can we get more themes and color options?,survey,Startup,Free,0,2,Dashboards,3,Medium,No,Low,No,3.6,Closed - no action,,
+F016,STF-04,2026-06-16,I would like more control over fonts and spacing in reports.,survey,Startup,Free,0,5,Dashboards,3,Low,No,Low,No,3.7,Monitoring,Added to backlog,
+F017,STF-17,2026-07-06,There are not enough dashboard templates for my use case.,app_review,Startup,Free,0,3,Dashboards,2,Medium,No,Low,No,3.7,Open,,No measurable change
+F018,STF-18,2026-06-26,I want to hide widgets I do not use.,survey,Startup,Free,0,1,Dashboards,3,Low,No,Low,No,3.6,Monitoring,,
+F019,STF-19,2026-05-28,"The default dashboard is fine, but I want a more polished look.",support_ticket,Startup,Free,0,3,Dashboards,3,Medium,No,Low,No,3.6,Closed - no action,Added to backlog,No measurable change
+F020,STF-20,2026-07-02,Please let me create custom dashboard layouts.,support_ticket,Startup,Free,0,4,Dashboards,3,Medium,No,Low,No,3.7,Closed - no action,Added to backlog,No measurable change
+F021,STF-21,2026-07-08,I would like to rearrange the charts without upgrading.,survey,Startup,Free,0,4,Dashboards,2,Medium,No,Low,No,3.6,Monitoring,Added to backlog,
+F022,STF-22,2026-06-08,More color palettes would make client screenshots look better.,survey,Startup,Free,0,1,Dashboards,2,Low,No,Low,No,3.6,Open,,No measurable change
+F023,STF-23,2026-07-11,The dashboard needs a dark mode.,support_ticket,Startup,Free,0,4,Dashboards,3,Medium,No,Low,No,3.6,Monitoring,,No measurable change
+F024,STF-24,2026-06-30,I want to customize the home screen for each project.,app_review,Startup,Free,0,7,Dashboards,3,Low,No,Low,No,3.6,Monitoring,,No measurable change
+F025,ENT-01,2026-06-26,The Salesforce sync skipped updated opportunities again. Our pipeline report was wrong.,cancellation_survey,Enterprise,Enterprise,42000,24,Integrations,2,High,No,High,Yes,3.6,Unresolved,,
+F026,ENT-02,2026-07-17,We cannot trust the Salesforce integration because records arrive hours late.,support_ticket,Enterprise,Enterprise,58000,22,Integrations,2,High,No,High,Yes,3.7,Escalated,Engineering investigation,Issue recurred
+F027,ENT-03,2026-07-11,Duplicate contacts keep appearing after the Salesforce sync.,interview,Enterprise,Enterprise,76000,24,Integrations,1,High,No,High,Yes,3.7,Escalated,Manual resync,Customer still at risk
+F028,ENT-04,2026-07-08,The integration failed during our quarter-end reporting process.,support_ticket,Enterprise,Enterprise,91000,24,Integrations,2,High,No,High,Yes,3.6,Escalated,,
+F029,ENT-05,2026-05-31,We are considering canceling because the Salesforce data cannot be trusted.,support_ticket,Enterprise,Enterprise,64000,12,Integrations,1,High,Yes,High,Yes,3.6,Investigating,Manual resync,Customer still at risk
+F030,ENT-06,2026-07-10,Our sales team stopped using FlowPilot after another failed sync.,cancellation_survey,Enterprise,Enterprise,52000,11,Integrations,1,High,Yes,High,Yes,3.7,Escalated,Manual resync,Customer still at risk
+F031,ENT-07,2026-06-03,The Salesforce connection drops without warning and requires an admin to reconnect it.,cancellation_survey,Enterprise,Enterprise,83000,19,Integrations,1,High,No,High,Yes,3.7,Escalated,Engineering investigation,Customer still at risk
+F032,SMB-01,2026-07-10,Account ownership changes are not reflected correctly after syncing.,support_ticket,SMB,Pro,12000,28,Integrations,2,High,No,High,Yes,3.6,Unresolved,Manual resync,Issue recurred
+F033,SMB-02,2026-07-20,"The sync works most days, but the failures are serious when they happen.",interview,SMB,Pro,9600,25,Integrations,2,High,Yes,High,No,3.6,Escalated,,Issue recurred
+F034,SMB-03,2026-07-12,We lost confidence in the dashboard because Salesforce totals do not match.,support_ticket,SMB,Pro,14400,29,Integrations,1,High,Yes,High,Yes,3.6,Investigating,Engineering investigation,
+F035,STP-01,2026-08-03,After the latest update I cannot log in on mobile unless I reinstall the app.,support_ticket,Startup,Pro,5400,10,Mobile,2,High,No,Medium,Yes,3.8,Escalated,Requested logs,
+F036,STP-02,2026-07-31,Mobile login stopped working this week. Desktop is fine.,app_review,Startup,Pro,7200,10,Mobile,1,High,No,Medium,No,3.8,Escalated,Reinstall workaround,
+F037,STP-03,2026-08-03,The app keeps sending me back to the login screen after the update.,app_review,Startup,Pro,3600,13,Mobile,2,Medium,No,Medium,No,3.8,Investigating,,
+F038,SMB-04,2026-07-26,Face ID no longer completes login on iOS.,app_review,SMB,Pro,5400,6,Mobile,1,Medium,No,Medium,No,3.8,Investigating,Reinstall workaround,
+F039,SMB-05,2026-08-01,Our field team cannot sign in on mobile since version 3.8.,app_review,SMB,Pro,7200,17,Mobile,2,High,No,Medium,Yes,3.8,Workaround provided,,
+F040,SMB-06,2026-07-26,The mobile app says my session expired immediately after I log in.,app_review,SMB,Pro,3600,18,Mobile,2,Medium,No,Medium,No,3.8,Investigating,Reinstall workaround,
+F041,SMB-07,2026-08-02,Several employees reported the same mobile login loop this morning.,support_ticket,SMB,Pro,3600,8,Mobile,1,Medium,No,Medium,Yes,3.8,Workaround provided,Reinstall workaround,
+F042,ENT-08,2026-07-31,Android login started failing after the most recent release.,app_review,Enterprise,Enterprise,48000,12,Mobile,1,High,No,High,Yes,3.8,Investigating,Requested logs,
+F043,ENT-02,2026-05-27,Contractors can see projects they should not have access to.,support_ticket,Enterprise,Enterprise,76000,9,Permissions,2,High,No,Medium,Yes,3.7,Open,,
+F044,ENT-03,2026-06-30,We need role-based permissions before we can roll this out to more departments.,sales_note,Enterprise,Enterprise,83000,22,Permissions,3,High,No,Medium,No,3.8,Escalated,,Expansion delayed
+F045,ENT-04,2026-07-06,Admin controls are too basic for a company our size.,interview,Enterprise,Enterprise,95000,12,Permissions,3,High,No,Medium,No,3.6,Escalated,,
+F046,ENT-05,2026-07-02,"We need separate permissions for viewing, editing, and exporting data.",support_ticket,Enterprise,Enterprise,68000,12,Permissions,2,High,No,Medium,No,3.7,Escalated,Security review,
+F047,ENT-06,2026-06-24,The lack of audit logs is blocking our security review.,sales_note,Enterprise,Enterprise,120000,15,Permissions,3,High,No,Medium,Yes,3.6,Escalated,,
+F048,ENT-07,2026-07-01,Managers need access to team dashboards without seeing individual compensation data.,interview,Enterprise,Enterprise,54000,13,Permissions,2,High,No,Medium,No,3.7,Open,Security review,
+F049,ENT-08,2026-06-08,We cannot expand beyond one business unit until permissions improve.,support_ticket,Enterprise,Enterprise,101000,15,Permissions,2,High,No,Medium,Yes,3.6,Planned,Security review,
+F050,ENT-09,2026-07-16,Please add approval controls for external collaborators.,support_ticket,Enterprise,Enterprise,87000,15,Permissions,2,High,No,Medium,No,3.7,Escalated,Added to roadmap,Expansion delayed
+F051,SMB-09,2026-07-13,Setup was surprisingly easy. We had the whole team working in one afternoon.,interview,SMB,Pro,7200,4,Onboarding,5,High,No,Low,No,3.8,Closed,,Activated
+F052,SMB-10,2026-07-10,The templates helped us launch our first workflow quickly.,interview,SMB,Pro,9600,3,Onboarding,5,High,No,Low,No,3.8,Closed,,Activated
+F053,SMB-11,2026-06-14,I understood the basics without needing a demo.,support_ticket,SMB,Pro,9600,1,Onboarding,4,High,No,Low,No,3.7,Closed,,Activated
+F054,SMB-12,2026-06-01,The onboarding checklist was clear and useful.,survey,SMB,Pro,7200,5,Onboarding,5,High,No,Low,No,3.8,Closed,,Activated
+F055,SMB-13,2026-07-25,Connecting the first data source was confusing and I almost gave up.,interview,SMB,Pro,12000,3,Onboarding,2,Medium,No,Medium,No,3.8,Open,,
+F056,SMB-14,2026-06-30,I could not tell which setup step was required versus optional.,support_ticket,SMB,Pro,3600,4,Onboarding,2,Medium,No,Medium,No,3.7,Open,,
+F057,SMB-15,2026-07-11,The tutorial assumes I already understand workflow automation.,interview,SMB,Pro,12000,1,Onboarding,2,Medium,No,Medium,No,3.7,Open,,
+F058,SMB-16,2026-07-04,"Setup was easy, but inviting teammates was harder than expected.",survey,SMB,Pro,3600,3,Onboarding,3,Medium,No,Medium,No,3.8,Open,,
+F059,STP-09,2026-06-15,The sample project made the product click for me.,interview,Startup,Pro,9600,5,Onboarding,5,High,No,Low,No,3.8,Closed,,Activated
+F060,STP-10,2026-06-15,"I needed support to finish setup, but the support response was excellent.",survey,Startup,Pro,9600,4,Onboarding,4,High,No,Low,No,3.8,Closed,Support follow-up,Activated
+F061,STF-21,2026-07-07,We need more dashboard templates. I do not know which reports leadership actually needs.,survey,Startup,Free,0,8,Reporting,4,Low,No,Low,No,3.8,Monitoring,,
+F062,STF-22,2026-06-15,Please add a weekly executive report template.,interview,Startup,Free,0,10,Reporting,2,Medium,No,Low,No,3.7,Open,,
+F063,STF-23,2026-05-29,"I want a template for board reporting, but I am not sure which metrics matter.",support_ticket,Startup,Free,0,11,Reporting,3,Medium,No,Low,No,3.7,Backlog,,
+F064,STF-24,2026-06-26,The reports show a lot of data but do not tell me what needs attention.,support_ticket,Startup,Free,0,9,Reporting,3,Low,No,Low,No,3.7,Monitoring,,
+F065,STF-25,2026-06-11,Can the product recommend which KPIs to track for a SaaS company?,survey,Startup,Free,0,15,Reporting,3,Medium,No,Low,No,3.6,Open,,
+F066,SMB-18,2026-07-20,I need a simple way to explain project health to leadership.,survey,SMB,Pro,7200,5,Reporting,4,Low,No,Low,No,3.7,Backlog,,
+F067,SMB-19,2026-06-29,"More templates would help, but the real problem is choosing the right measures.",support_ticket,SMB,Pro,12000,13,Reporting,4,Medium,No,Low,No,3.7,Open,,
+F068,SMB-20,2026-07-23,I spend too much time deciding which charts belong in a client update.,survey,SMB,Pro,7200,14,Reporting,4,Low,No,Low,No,3.6,Monitoring,,
+F069,SMB-01,2026-05-25,"The reporting builder is flexible, but I do not know where to start.",survey,SMB,Pro,12000,10,Reporting,3,Low,No,Low,No,3.7,Open,,
+F070,SMB-02,2026-06-13,A guided report based on my business goal would be more useful than another blank template.,interview,SMB,Pro,9600,11,Reporting,4,Medium,No,Low,No,3.6,Monitoring,,
+F071,SMB-01,2026-06-25,Large projects take too long to load during our Monday planning meeting.,survey,SMB,Pro,54000,16,Performance,3,High,No,Medium,No,3.8,Open,,
+F072,SMB-02,2026-07-10,The dashboard becomes sluggish when we filter more than six months of data.,survey,SMB,Pro,72000,11,Performance,3,High,No,Medium,No,3.7,Monitoring,,
+F073,SMB-03,2026-07-04,Exports sometimes time out for our largest workspace.,survey,SMB,Pro,12000,13,Performance,2,High,No,Medium,Yes,3.7,Monitoring,,
+F074,SMB-04,2026-06-11,Search is noticeably slower than it was last quarter.,support_ticket,SMB,Pro,18000,11,Performance,3,High,No,Medium,No,3.8,Monitoring,,
+F075,ENT-10,2026-06-21,The app freezes briefly when several teammates update tasks at once.,survey,Enterprise,Enterprise,72000,10,Performance,2,High,No,Medium,No,3.8,Monitoring,,
+F076,ENT-11,2026-06-06,Performance is fine for small projects but degrades as our workspace grows.,support_ticket,Enterprise,Enterprise,72000,24,Performance,2,High,No,Medium,Yes,3.8,Monitoring,,
+F077,STP-11,2026-06-23,I was charged for a seat that had already been removed.,survey,Startup,Pro,5400,18,Billing,1,Medium,No,Medium,Yes,3.7,Open,Invoice corrected,Customer satisfied
+F078,STP-12,2026-06-23,The upgrade screen does not clearly explain annual versus monthly pricing.,survey,Startup,Pro,87000,8,Billing,2,Medium,No,Medium,No,3.6,Escalated,,Customer satisfied
+F079,STP-13,2026-06-22,We need consolidated billing across multiple workspaces.,support_ticket,Startup,Pro,3600,16,Billing,1,Medium,No,Medium,No,3.7,Resolved,Credit issued,
+F080,ENT-11,2026-06-23,The invoice does not include the purchase order number our finance team requires.,survey,Enterprise,Enterprise,5400,17,Billing,2,Medium,No,Medium,Yes,3.7,Open,Invoice corrected,
+F081,ENT-12,2026-07-01,The free-to-paid transition was confusing and we were surprised by the first bill.,support_ticket,Enterprise,Enterprise,87000,3,Billing,3,Medium,No,Medium,No,3.8,Resolved,Invoice corrected,Customer satisfied
+F082,SMB-06,2026-07-22,The shared workspace finally replaced three different spreadsheets for our team.,app_review,SMB,Pro,9600,4,Collaboration,4,High,No,Low,No,3.7,Closed,,Positive feedback
+F083,SMB-07,2026-07-11,Comments and mentions make handoffs much clearer.,survey,SMB,Pro,14400,19,Templates,4,High,No,Low,No,3.7,Closed,,Positive feedback
+F084,SMB-08,2026-06-01,Support responded within an hour and solved the issue immediately.,app_review,SMB,Pro,52000,15,Collaboration,5,High,No,Low,No,3.7,Closed,,Positive feedback
+F085,SMB-09,2026-07-10,The project templates save us several hours every month.,interview,SMB,Pro,9600,22,Collaboration,5,High,No,Low,No,3.8,Closed,,Positive feedback
+F086,SMB-10,2026-06-10,Our weekly planning meeting is shorter because everyone sees the same status.,app_review,SMB,Pro,14400,6,Templates,5,High,No,Low,No,3.7,Closed,,Positive feedback
+F087,SMB-11,2026-07-17,The collaboration features are the main reason we renewed.,app_review,SMB,Pro,52000,23,Collaboration,5,High,No,Low,No,3.7,Closed,,Renewed
+F088,ENT-09,2026-06-16,The support team explained the workaround clearly and followed up afterward.,app_review,Enterprise,Enterprise,76000,15,Collaboration,5,High,No,Low,No,3.8,Closed,,Positive feedback
+F089,ENT-10,2026-07-29,We use the shared timeline with every client now.,interview,Enterprise,Enterprise,76000,7,Support,5,High,No,Low,No,3.8,Closed,,Positive feedback
+F090,ENT-11,2026-07-11,The product is becoming the operating hub for our delivery team.,interview,Enterprise,Enterprise,14400,20,Templates,5,High,No,Low,No,3.8,Closed,,Positive feedback
